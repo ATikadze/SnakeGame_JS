@@ -92,7 +92,7 @@ function playerMovement(direction) {
             break;
     }
 
-    if (getCoordinates().row == coinCoordinates.posY && getCoordinates().col == coinCoordinates.posX) {
+    if (getCoordinates().row === coinCoordinates.posY && getCoordinates().col == coinCoordinates.posX) {
         innerDivs[coinCoordinates.posY].divs[coinCoordinates.posX].className = innerDivs[coinCoordinates.posY].divs[coinCoordinates.posX].className.replace(coinClass).trim();
         generateCoin();
         txtScore.innerText = Number(txtScore.innerText) + 1;
@@ -122,8 +122,8 @@ function getCoordinates() {
 function generateCoin() {
     let arr = innerDivs[getCoordinates().row].divs.filter(p => { return p != getPlayer(); });
     
-    do { var x = Math.floor(Math.random() * checkCount); } while(x == getCoordinates.col);
-    do { var y = Math.floor(Math.random() * checkCount); } while(y == getCoordinates.row);
+    do { var x = Math.floor(Math.random() * checkCount); } while(x === getCoordinates.col);
+    do { var y = Math.floor(Math.random() * checkCount); } while(y === getCoordinates.row);
     
     coinCoordinates = { posY: y, posX: x };
     console.log(coinCoordinates);
