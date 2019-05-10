@@ -1,11 +1,18 @@
-'use strict'
+'use strict';
 
 const playerName = 'divPlayer';
 var movementInterval;
 let innerDivs = [];
 let player;
 
+function clear() {
+    innerDivs.forEach(row => { row.divs.forEach(col => { col.parentNode.removeChild(col); }); });
+    Array.from(document.getElementsByClassName('divRow')).forEach(row => { row.parentNode.removeChild(row); });
+    innerDivs = [];
+}
+
 function startUp(count) {
+    clear(); 
     for (let i = 0; i < count; i++) {
         let colDivs = [];
         let divRow = document.createElement('div');
@@ -50,28 +57,28 @@ function playerMovement(direction) {
 
     switch (direction) {
         case 'left':    
-            if (col == 0) {
+            if (col === 0) {
                 col = innerDivs.length;
             }
             col--;
             innerDivs[row].divs[col].className += ' ' + playerName;
             break;
         case 'right':
-            if (col == innerDivs.length - 1) {
+            if (col === innerDivs.length - 1) {
                 col = -1;
             }
             col++;
             innerDivs[row].divs[col].className += ' ' + playerName;
             break;
         case 'top':
-            if (row == 0) {
+            if (row === 0) {
                 row = innerDivs[0].divs.length;
             } 
             row--;
             innerDivs[row].divs[col].className += ' ' + playerName;
             break;
         case 'bottom':
-            if (row == innerDivs[0].divs.length - 1) {
+            if (row === innerDivs[0].divs.length - 1) {
                 row = -1;
             }
             row++;
