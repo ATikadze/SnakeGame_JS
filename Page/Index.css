@@ -1,0 +1,44 @@
+body, head {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#playground {
+    top: 50%;
+    left: 50%;
+    width: 40vw;
+    height: 40vw;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+#game {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+}
+
+.divRow {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.divCol {
+    height: 100%;
+    flex-grow: 1;
+    border: 1px solid black;
+    background-color: rgb(255, 0, 0);
+}
+
+.divCol:hover {
+    background-color: rgba(255, 0, 0, .5);
+}
+
+.divPlayer {
+    background-color: rgba(255, 255, 255, 1);
+}
