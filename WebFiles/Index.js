@@ -70,28 +70,28 @@ function playerMovement(direction) {
     switch (direction) {
         case 'left':
             if (col === 0) {
-                col = innerDivs.length;
+                gameOver();
             }
             col--;
             innerDivs[row].divs[col].className += playerClass;
             break;
         case 'right':
             if (col === innerDivs.length - 1) {
-                col = -1;
+                gameOver();
             }
             col++;
             innerDivs[row].divs[col].className +=  playerClass;
             break;
         case 'top':
             if (row === 0) {
-                row = innerDivs[0].divs.length;
+                gameOver();
             }
             row--;
             innerDivs[row].divs[col].className += playerClass;
             break;
         case 'bottom':
             if (row === innerDivs[0].divs.length - 1) {
-                row = -1;
+                gameOver();
             }
             row++;
             innerDivs[row].divs[col].className += playerClass;
@@ -101,7 +101,7 @@ function playerMovement(direction) {
     }
 
     if (playerParts.length > 0) {
-            partMovement(direction);    
+        partMovement(direction);    
     }
 
     if (getCoordinates().row == coinCoordinates.posY && getCoordinates().col == coinCoordinates.posX) {
@@ -112,7 +112,7 @@ function playerMovement(direction) {
     }
 
     if (innerDivs[getCoordinates().row].divs[getCoordinates().col].className.includes(partsClass)) {
-        gameOver()
+        gameOver();
     }
 }
 
