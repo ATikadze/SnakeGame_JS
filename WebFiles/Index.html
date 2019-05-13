@@ -12,12 +12,10 @@
             </div>
         </div>
 
-        <div class="div-control">
-            <input id='txtRows' type="number" />
-            <button class="btnSetRows" type="button" onclick="startUp(document.getElementById('txtRows').value);"><small><bold>SET</bold></small></button>
-        </div>
-        <div class="div-score">
+        <div class="div-options">
             <p id="txtScore"></p>
+            <input id='txtRows' type="number" />
+            <button class="btnSetRows" type="button" onclick="startUp(document.getElementById('txtRows').value.length == 0 || Number(document.getElementById('txtRows').value) <= 1 ? undefined : document.getElementById('txtRows').value);"><small><bold>SET</bold></small></button>
         </div>
 
         <script src="Index.js"></script>

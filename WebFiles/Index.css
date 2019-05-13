@@ -10,6 +10,7 @@ body, head {
     width: 40vw;
     height: 40vw;
     position: absolute;
+    border: 2px solid black;
     transform: translate(-50%, -50%);
 }
 
@@ -35,12 +36,12 @@ body, head {
     background-color: rgb(255, 0, 0);
 }
 
-.divCol:hover {
-    background-color: rgba(255, 0, 0, .5);
+.divPlayer {
+    background-color: rgba(0, 125, 0, 1);
 }
 
-.divPlayer {
-    background-color: rgba(255, 255, 255, 1);
+.divPart {
+    background-color: rgba(0, 140, 0, 1);
 }
 
 .divCoin {
@@ -48,19 +49,22 @@ body, head {
 }
 
 .btnSetRows, #txtRows {
+    width: 45%;
     outline-color: gray;
 }
 
 .btnSetRows {
     border: none;
     padding: 3px 5px;
+    margin-top: 50px;
 }
 
-.div-control {
-    left: 50%;
-    bottom: 10%;
+.div-options {
+    width: 10%;
+    float: right;
     display: block;
-    position: absolute;
+    margin-right: 5vw;
+    position: relative;
     transform: translateX(-50%);
 }
 
