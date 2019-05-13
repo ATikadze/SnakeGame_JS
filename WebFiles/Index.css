@@ -42,12 +42,3 @@ body, head {
 .divPlayer {
     background-color: rgba(255, 255, 255, 1);
 }
-
-.btnSetRows, #txtRows {
-    outline-color: gray;
-}
-
-.btnSetRows {
-    border: none;
-    padding: 3px 5px;
-}
